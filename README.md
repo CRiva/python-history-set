@@ -2,7 +2,7 @@
 
 A Set implementation that tracks added and removed elements.
 
-## Example ##
+## Usage ##
 
 ~~~python
 >>> from history_set import HistorySet
@@ -35,4 +35,23 @@ If you require these elements to be tracked, you can construct the object with t
 >>> history_set.remove(4)
 >>> history_set.added()           # Prints: {4}
 >>> history_set.removed()         # Prints: {4}
+~~~
+
+## Test ##
+
+You can run the tests using [tox](https://tox.readthedocs.io/en/latest/)
+
+~~~shell
+tox
+~~~
+
+## Publish ##
+
+To publish a new version of this package your Pypi user needt to be added to the project. (Ask Tjaart to give you access)
+
+~~~shell
+# Update version number in setup.py
+
+python setup.py sdist
+twine upload dist/*
 ~~~

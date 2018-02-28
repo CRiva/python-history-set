@@ -1,0 +1,8 @@
+.coverage
+.direnv
+dist/
+htmlcov
+**/*.egg-info
+**/__pycache__
+.pytest_cache
+.tox
