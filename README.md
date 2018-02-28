@@ -13,6 +13,9 @@ A Set implementation that tracks added and removed elements.
 >>> history_set.remove(1)
 >>> history_set                   # Prints: {2, 3, 4}
 >>> history_set.removed()         # Prints: {1}
+>>> history_set.reset()
+>>> history_set.added()           # Prints: set()
+>>> history_set.removed()         # Prints: set()
 ~~~
 
 ## Special case ##
