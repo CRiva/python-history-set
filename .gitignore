@@ -1,6 +1,7 @@
 .coverage
 .direnv
 dist/
+.eggs/
 htmlcov
 **/*.egg-info
 **/__pycache__

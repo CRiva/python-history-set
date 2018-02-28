@@ -5,7 +5,7 @@ from os.path import basename, splitext
 from setuptools import find_packages, setup
 
 setup(name='history-set',
-      version="0.1",
+      version="0.1.1",
       description='A Set implementation that tracks added and removed elements.',
       packages=find_packages('lib'),
       package_dir={'': 'lib'},
@@ -19,4 +19,7 @@ setup(name='history-set',
           'License :: OSI Approved :: MIT License',
           'Programming Language :: Python :: 2',
           'Programming Language :: Python :: 3',
-      ])
+      ],
+      setup_requires=['setuptools-markdown'],
+      long_description_markdown_filename='README.md',
+      )
