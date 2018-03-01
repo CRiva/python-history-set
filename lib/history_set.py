@@ -45,3 +45,9 @@ class HistorySet(Set):
     def reset(self):
         self.__added__.clear()
         self.__removed__.clear()
+
+    def reset_added(self):
+        self.__added__.clear()
+
+    def reset_removed(self):
+        self.__removed__.clear()
