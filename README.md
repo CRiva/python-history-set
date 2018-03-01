@@ -40,6 +40,34 @@ If you require these elements to be tracked, you can construct the object with t
 >>> history_set.removed()         # Prints: {4}
 ~~~
 
+----------
+
+By default, the `reset()` method will clear the entire history
+
+~~~python
+>>> history_set = HistorySet([1, 2, 3])
+>>> history_set.add(4)
+>>> history_set.added()           # Prints: {4}
+>>> history_set.remove(2)
+>>> history_set.removed()         # Prints: {2}
+>>> history_set.reset()
+>>> history_set.added()           # Prints: set()
+>>> history_set.removed()         # Prints: set()
+~~~
+
+If you require reseting only the `added()` or `removed()` history, you can call the `reset` method with `added` or `removed` booleans values to specify which history you with to reset
+
+~~~python
+>>> history_set = HistorySet([1, 2, 3])
+>>> history_set.add(4)
+>>> history_set.added()           # Prints: {4}
+>>> history_set.remove(2)
+>>> history_set.removed()         # Prints: {2}
+>>> history_set.reset(added=True)
+>>> history_set.added()           # Prints: set()
+>>> history_set.removed()         # Prints: {2}
+~~~
+
 ## Test ##
 
 You can run the tests using [tox](https://tox.readthedocs.io/en/latest/)
