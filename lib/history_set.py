@@ -42,12 +42,11 @@ class HistorySet(Set):
         return self.__removed__
 
 
-    def reset(self):
-        self.__added__.clear()
-        self.__removed__.clear()
-
-    def reset_added(self):
-        self.__added__.clear()
-
-    def reset_removed(self):
-        self.__removed__.clear()
+    def reset(self, added=None, removed=None):
+        if added:
+            self.__added__.clear()
+        elif removed:
+            self.__removed__.clear()
+        else:
+            self.__added__.clear()
+            self.__removed__.clear()

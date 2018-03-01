@@ -42,7 +42,7 @@ def test_added_reset(history_set):
     history_set.remove(2)
     assert (history_set.removed() == {2})
 
-    history_set.reset_added()
+    history_set.reset(added=True)
     assert (history_set.added() == set())
     assert (history_set.removed() == {2})
 
@@ -53,7 +53,7 @@ def test_removed_reset(history_set):
     history_set.remove(2)
     assert (history_set.removed() == {2})
 
-    history_set.reset_removed()
+    history_set.reset(removed=True)
     assert (history_set.added() == {4})
     assert (history_set.removed() == set())
 
