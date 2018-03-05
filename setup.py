@@ -5,7 +5,7 @@ from os.path import basename, splitext
 from setuptools import find_packages, setup
 
 setup(name='history-set',
-      version="0.1.1",
+      version="0.1.4",
       description='A Set implementation that tracks added and removed elements.',
       packages=find_packages('lib'),
       package_dir={'': 'lib'},

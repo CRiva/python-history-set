@@ -21,8 +21,12 @@ class HistorySet(Set):
         return self.__data__.__repr__()
 
     def add(self, item):
-        self.__added__.add(item)
-        self.__data__.add(item)
+        if(item not in self.__data__):
+            if(not self.__eidetic__ and item in self.__removed__):
+                self.__removed__.remove(item)
+            else:
+                self.__added__.add(item)
+            self.__data__.add(item)
 
     def remove(self, item):
         if(item not in self.__data__):
@@ -34,13 +38,16 @@ class HistorySet(Set):
             self.__removed__.add(item)
         self.__data__.remove(item)
 
-
     def added(self):
         return self.__added__
 
     def removed(self):
         return self.__removed__
 
+    def clear(self):
+        for item in self.__data__:
+            self.__removed__.add(item)
+        self.__data__.clear()
 
     def reset(self, added=None, removed=None):
         if added:

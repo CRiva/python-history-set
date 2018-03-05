@@ -57,6 +57,21 @@ def test_removed_reset(history_set):
     assert (history_set.added() == {4})
     assert (history_set.removed() == set())
 
+def test_clear(history_set):
+    history_set.remove(3)
+    history_set.clear()
+    history_set.add(4)
+    assert history_set.__data__ == {4}
+    assert history_set.removed() == {1,2,3}
+    assert history_set.added() == {4}
+
+def test_remove_then_add(history_set):
+    history_set.clear()
+    history_set.add(3)
+    assert history_set.__data__ == {3}
+    assert history_set.removed() == {1,2}
+    assert history_set.added() == set()
+
 def test_non_eidetic():
     history_set = HistorySet([1, 2, 3], eidetic=True)
     history_set.add(4)
