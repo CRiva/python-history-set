@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/CRiva/python-history-set.svg?branch=master)](https://travis-ci.org/CRiva/python-history-set)
+
+This repo lives both in [Github](https://github.com/CRiva/python-history-set) and [BitBucket](https://bitbucket.org/westmont/history_set/src/master/). 
+
 # History Set #
 
 A Set implementation that tracks added and removed elements.
